@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Trip</title>
+  </head>
+  <body>
+    <div>
+      <form action="/trips" method="GET">
+        <button>Back to My Trips</button>
+      </form>
+      <h4>Add a Trip:</h4>
+      <form action="/add-trip" method="POST">
+        <input type="text" name="title" placeholder="Paris Trip"/>
+        <input type="text" name="image" placeholder="Image URL"/>
+        <input type="text" name="departureDate" placeholder="May 1, 2019"/>
+        <input type="text" name="returnDate" placeholder="May 30, 2019"/>
+        <button type="submit">Add Trip</button>
+      </form>
+    </div>
+  </body>
+</html>

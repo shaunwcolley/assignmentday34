@@ -1,0 +1,11 @@
+ul{
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+li div {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

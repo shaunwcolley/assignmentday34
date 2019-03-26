@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>My Trips</title>
+    <link rel="stylesheet" href="/style.css"/>
+  </head>
+  <body>
+    <div>
+      <h3> My Trips </h3>
+      <form action="/add-trip" method="GET">
+      <button>Add Trip</button>
+      </form>
+      <ul>
+      {{#trips}}
+        <li>
+          <div style="background-image: url({{image}})">
+            <h4>{{title}}</h4>
+        <!-- <p>
+          <img src='{{image}}'/>
+        </p> -->
+            <p>
+              <span>{{departureDate}}</span>
+              <span>{{returnDate}}</span>
+            </p>
+            <form action="/remove" method="POST">
+              <input type="hidden" name="id" value="{{id}}"/>
+              <button type="submit">DEL</button>
+            </form>
+          </div>
+        </li>
+      {{/trips}}
+      </ul>
+    </div>
+  </body>
+</html>
