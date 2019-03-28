@@ -3,10 +3,12 @@
   <head>
     <meta>
     <title>My Trips</title>
-    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
   </head>
   <body>
     <div>
+      {{>menu}}
+      {{>signout}}
       <h3> My Trips </h3>
       <form action="/add-trip" method="GET">
       <button>Add Trip</button>
@@ -16,9 +18,6 @@
         <li>
           <div style="background-image: url({{image}})">
             <h4>{{title}}</h4>
-        <!-- <p>
-          <img src='{{image}}'/>
-        </p> -->
             <p>
               <span>{{departureDate}}</span>
               <span>{{returnDate}}</span>

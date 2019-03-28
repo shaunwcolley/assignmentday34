@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trip Chat</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+  </head>
+  <body>
+    <div>
+      <div id="header">
+        {{>menu}}
+        {{>signout}}
+      </div>
+      <div>
+        <h3>Trip Chat</h3>
+        <input type="text" id="chatMessageTextBox"></input>
+        <button id="sendMessageButton">Send</button>
+
+        <ul id="chatMessageList">
+        </ul>
+
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+
+  </body>
+</html>

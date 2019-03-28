@@ -3,9 +3,12 @@
   <head>
     <meta>
     <title>Trip Removed</title>
+    <link rel="stylesheet" href="/css/style.css"/>
   </head>
   <body>
     <div>
+      {{>menu}}
+      {{>signout}}
       <h3>Trip Successfully Removed</h3>
       <form action="/trips" method="GET">
         <button>Back</button>

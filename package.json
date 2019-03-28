@@ -11,6 +11,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mustache-express": "^1.2.8"
+    "express-session": "^1.15.6",
+    "mustache-express": "^1.2.8",
+    "socket.io": "^2.2.0"
   }
 }

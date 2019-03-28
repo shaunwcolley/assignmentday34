@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+  </head>
+  <body>
+    <div>
+      {{>menu}}
+      <div>
+      <h3>Login</h3>
+        <form action="/login" method="POST"/>
+          {{>login-register}}
+        </form>
+      </div>
+      {{message}}
+    </div>
+
+  </body>
+</html>
