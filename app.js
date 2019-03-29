@@ -103,6 +103,7 @@ app.post('/add-trip', (req,res) => {
 })
 
 app.get('/login', (req,res) =>{
+  chatterName = req.session.username
   res.render('login')
 })
 
@@ -120,6 +121,7 @@ app.post('/register', (req,res) => {
 })
 
 app.post('/login', (req, res) => {
+  chatterName = req.session.username
   let username = req.body.username
   let password = req.body.password
 
@@ -145,23 +147,28 @@ app.post('/signout', (req,res) => {
   }
 })
 
+let chatterName = ""
+let members =[]
 
 app.get('/chat', (req, res) => {
   if (req.session.username) {
-    io.on('connection', (socket) => {
-      console.log('Someone logged onto chat ...')
-      socket.on('trips', (data) => {
-        let chatter = {name: req.session.username, data: data}
-        io.sockets.emit('trips', chatter)
-      })
-    })
-    res.render('chat')
-
+    res.render('chat', {name: req.session.username})
   } else {
     res.render('home', {message: "Nice try, login first!"})
   }
 })
 
+let chatHistory = []
+
+io.on('connection', (socket) => {
+  console.log('Someone logged onto chat ...')
+  let clients = Object.keys(io.sockets.sockets)
+  io.sockets.emit('newChat', { chatHistory: chatHistory, users: clients.length})
+  socket.on('trips', (data) => {
+    chatHistory.push(data)
+    io.sockets.emit('trips', { data:data, users: clients.length })
+  })
+})
 
 
 server.listen(3000)

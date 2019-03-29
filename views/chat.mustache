@@ -12,9 +12,13 @@
       </div>
       <div>
         <h3>Trip Chat</h3>
-        <input type="text" id="chatMessageTextBox"></input>
-        <button id="sendMessageButton">Send</button>
-
+        <div>
+          <input type="text" id="chatMessageTextBox"></input>
+          <button id="sendMessageButton">Send</button>
+          <input type="hidden" id="idTextBox" value="{{name}}"/>
+          <ul id="userCount">
+          </ul>
+        </div>
         <ul id="chatMessageList">
         </ul>
 
